@@ -1,0 +1,8 @@
+wsdl: https://speller.yandex.net/services/spellservice?WSDL
+link: https://test-stand.gb.ru/api/posts
+login: BolvanOdin
+password: 32e8d56e17
+login_page: https://test-stand.gb.ru/gateway/login
+title: new test post
+description: creation new test post
+content: check title after creation new test post

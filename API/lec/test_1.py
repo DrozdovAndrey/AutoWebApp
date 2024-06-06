@@ -1,7 +1,7 @@
 import requests
 
 
-class TestApi:
+class TestRestApi:
 
     def get_sites(self, lat, long, radius, limit=100):
         session = requests.Session()
@@ -21,3 +21,10 @@ class TestApi:
 
     def test_step1(self, lat, long, radius, text):
         assert text in self.get_sites(lat, long, radius)
+
+
+class TestSoapApi:
+    def zeep_init(self):
+        wsdl = 'http://dss.cryptopro.ru/verify/service.svc?wsdl'
+        sign = """
+        """
