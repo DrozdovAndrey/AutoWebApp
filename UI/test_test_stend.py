@@ -1,26 +1,23 @@
 from module import Page, testdata
-from conftest import login
+from conftest import login, create_post
 
 
 class TestUI:
     def test_get_property_height_by_css(self, css_selector_field_div_login):
         page = Page(testdata["address"])
-        css_selector = css_selector_field_div_login
-        height = page.get_element_properties("css", css_selector, 'height')
+        height = page.get_element_properties("css", css_selector_field_div_login, 'height')
         assert height == testdata["height"]
 
     def test_get_property_color_by_xpath(self, xpath_selector_btn):
         page = Page(testdata["address"])
-        xpath_selector = xpath_selector_btn
-        color = page.get_element_properties("xpath", xpath_selector, 'color')
+        color = page.get_element_properties("xpath", xpath_selector_btn, 'color')
         assert color == testdata["color"]
 
     def test_login_failed(self, username_fild_input_selector, password_fild_input_selector, button_selector,
                           error_selector):
         page = Page(testdata["address"])
         login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'w')
-        err_selector = error_selector
-        err = page.find_element('xpath', err_selector).text
+        err = page.find_element('xpath', error_selector).text
         page.close()
         assert err == str(testdata["text_err"])
 
@@ -28,8 +25,22 @@ class TestUI:
                            xpath_selector_hello_user):
         page = Page(testdata["address"])
         login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'g')
-        hello = page.find_element('xpath',xpath_selector_hello_user).text
+        hello = page.find_element('xpath', xpath_selector_hello_user).text
         page.close()
         assert hello == testdata["hello"]
+
+    def test_create_post(self, username_fild_input_selector, password_fild_input_selector, button_selector,
+                         id_selector_plus, title_field_input_selector, description_field_input_selector,
+                         content_field_input_selector, xpath_selector_name_post):
+        page = Page(testdata["address"])
+        login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'g')
+        create_post(button_selector, page,
+                    id_selector_plus, title_field_input_selector, description_field_input_selector,
+                    content_field_input_selector)
+        name_post = page.find_element("xpath", xpath_selector_name_post).text
+        assert name_post == testdata['title']
+
+
+
 
 

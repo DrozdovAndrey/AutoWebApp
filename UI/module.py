@@ -30,6 +30,8 @@ class Page:
             element = self.driver.find_element(By.CSS_SELECTOR, path)
         elif mode == "xpath":
             element = self.driver.find_element(By.XPATH, path)
+        elif mode == "id":
+            element = self.driver.find_element(By.ID, path)
         else:
             element = None
         return element

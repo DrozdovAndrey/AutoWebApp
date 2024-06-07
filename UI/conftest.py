@@ -1,7 +1,6 @@
 import pytest
 import yaml
 
-
 with open('testdata.yaml') as f:
     testdata = yaml.safe_load(f)
 
@@ -14,6 +13,21 @@ def username_fild_input_selector():
 @pytest.fixture()
 def password_fild_input_selector():
     return '//*[@id="login"]/div[2]/label/input'
+
+
+@pytest.fixture()
+def title_field_input_selector():
+    return '//*[@id="create-item"]/div/div/div[1]/div/label/input'
+
+
+@pytest.fixture()
+def description_field_input_selector():
+    return '//*[@id="create-item"]/div/div/div[2]/div/label/span/textarea'
+
+
+@pytest.fixture()
+def content_field_input_selector():
+    return '//*[@id="create-item"]/div/div/div[3]/div/label/span/textarea'
 
 
 @pytest.fixture()
@@ -46,8 +60,18 @@ def xpath_selector_hello_user():
     return '/html/body/div[1]/main/nav/ul/li[3]/a'
 
 
-def login(username_fild_input_selector, password_fild_input_selector, button_selector,
-                          page, mode):
+@pytest.fixture()
+def xpath_selector_name_post():
+    return '//*[@id="app"]/main/div/div[1]/h1'
+
+
+
+@pytest.fixture()
+def id_selector_plus():
+    return 'create-btn'
+
+
+def login(username_fild_input_selector, password_fild_input_selector, button_selector, page, mode):
     page_ = page
     username_selector = username_fild_input_selector
     username = page_.find_element('xpath', username_selector)
@@ -61,4 +85,19 @@ def login(username_fild_input_selector, password_fild_input_selector, button_sel
         password.send_keys(testdata['password'])
     btn_selector = button_selector
     btn = page_.find_element('css', btn_selector)
+    btn.click()
+
+
+def create_post(button_selector, page,
+                id_selector_plus, title_field_input_selector, description_field_input_selector,
+                content_field_input_selector):
+    plus = page.find_element('id', id_selector_plus)
+    plus.click()
+    title = page.find_element("xpath", title_field_input_selector)
+    description = page.find_element("xpath", description_field_input_selector)
+    content = page.find_element("xpath", content_field_input_selector)
+    title.send_keys(testdata["title"])
+    description.send_keys(testdata["description"])
+    content.send_keys(testdata["content"])
+    btn = page.find_element('css', button_selector)
     btn.click()
