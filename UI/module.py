@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
-
 with open('testdata.yaml') as f:
     testdata = yaml.safe_load(f)
     browser = testdata['browser']
@@ -32,6 +31,8 @@ class Page:
             element = self.driver.find_element(By.XPATH, path)
         elif mode == "id":
             element = self.driver.find_element(By.ID, path)
+        elif mode == "class":
+            element = self.driver.find_element(By.CLASS_NAME, path)
         else:
             element = None
         return element

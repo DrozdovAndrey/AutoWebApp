@@ -53,8 +53,13 @@ def css_selector_field_div_login():
 
 
 @pytest.fixture()
-def xpath_selector_btn():
+def xpath_selector_login_btn():
     return '//*[@id="login"]/div[3]/button/div'
+
+
+@pytest.fixture()
+def class_selector_save_btn():
+    return 'mdc-button__ripple'
 
 
 @pytest.fixture()
@@ -65,7 +70,6 @@ def xpath_selector_hello_user():
 @pytest.fixture()
 def xpath_selector_name_post():
     return '//*[@id="app"]/main/div/div[1]/h1'
-
 
 
 @pytest.fixture()
@@ -90,7 +94,7 @@ def login(username_fild_input_selector, password_fild_input_selector, button_sel
     btn.click()
 
 
-def create_post(button_selector, page,
+def create_post(class_selector_save_btn, page,
                 id_selector_plus, title_field_input_selector, description_field_input_selector,
                 content_field_input_selector):
     time.sleep(5)
@@ -103,5 +107,7 @@ def create_post(button_selector, page,
     title.send_keys(testdata["title"])
     description.send_keys(testdata["description"])
     content.send_keys(testdata["content"])
-    btn = page.find_element('css', button_selector)
-    btn.click()
+    time.sleep(5)
+    btn = page.find_element('class', class_selector_save_btn)
+    btn.submit()
+    time.sleep(5)

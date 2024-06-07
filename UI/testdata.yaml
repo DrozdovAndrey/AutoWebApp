@@ -6,10 +6,10 @@ color: rgba(255, 255, 255, 1)
 w_username: test
 w_password: 1234
 text_err: 401
-wait: 3
+wait: 10
 username: BolvanOdin
 password: 32e8d56e17
 hello: Hello, BolvanOdin
-title: new test post 1
-description: creation new test post 1
-content: check title after creation new test post 1
+title: new test post 2
+description: creation new test post 2
+content: check title after creation new test post 2
