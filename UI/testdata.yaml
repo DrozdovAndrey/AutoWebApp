@@ -1,0 +1,12 @@
+address: https://test-stand.gb.ru/
+browser: firefox
+sleep_time: 1
+height: 56px
+color: rgba(255, 255, 255, 1)
+w_username: test
+w_password: 1234
+text_err: 401
+wait: 3
+username: BolvanOdin
+password: 32e8d56e17
+hello: Hello, BolvanOdin
