@@ -38,4 +38,5 @@ class TestUI:
                     id_selector_plus, title_field_input_selector, description_field_input_selector,
                     content_field_input_selector)
         name_post = page.find_element("xpath", xpath_selector_name_post).text
+        page.close()
         assert name_post == testdata['title']
