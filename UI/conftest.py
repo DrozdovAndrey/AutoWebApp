@@ -1,3 +1,5 @@
+import time
+
 import pytest
 import yaml
 
@@ -91,8 +93,10 @@ def login(username_fild_input_selector, password_fild_input_selector, button_sel
 def create_post(button_selector, page,
                 id_selector_plus, title_field_input_selector, description_field_input_selector,
                 content_field_input_selector):
+    time.sleep(5)
     plus = page.find_element('id', id_selector_plus)
     plus.click()
+    time.sleep(5)
     title = page.find_element("xpath", title_field_input_selector)
     description = page.find_element("xpath", description_field_input_selector)
     content = page.find_element("xpath", content_field_input_selector)

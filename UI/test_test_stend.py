@@ -39,6 +39,7 @@ class TestUI:
                     content_field_input_selector)
         name_post = page.find_element("xpath", xpath_selector_name_post).text
         assert name_post == testdata['title']
+#         problem with button locator
 
 
 
