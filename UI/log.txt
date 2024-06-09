@@ -1,0 +1,12 @@
+2024-06-10 00:05:52 INFO ====== WebDriver manager ======
+2024-06-10 00:05:52 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 00:05:53 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 00:05:53 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 00:05:56 INFO Send test to element //*[@id="login"]/div[1]/label/input
+2024-06-10 00:05:56 INFO Send 1234 to element //*[@id="login"]/div[2]/label/input
+2024-06-10 00:05:56 INFO Click login button
+2024-06-10 00:05:57 INFO We find text 401 in error field //*[@id="app"]/main/div/div/div[2]/h2
+2024-06-10 00:05:57 INFO Send BolvanOdin to element //*[@id="login"]/div[1]/label/input
+2024-06-10 00:05:57 INFO Send 32e8d56e17 to element //*[@id="login"]/div[2]/label/input
+2024-06-10 00:05:57 INFO Click login button
+2024-06-10 00:05:59 INFO Send BolvanOdin to element //*[@id="login"]/div[1]/label/input

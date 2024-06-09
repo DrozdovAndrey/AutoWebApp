@@ -1,42 +1,45 @@
-from module import Page, testdata
-from conftest import login, create_post
+from testpage import OperationHelper
+import yaml
+import time
+
+
+with open('testdata.yaml') as f:
+    data = yaml.safe_load(f)
 
 
 class TestUI:
-    def test_get_property_height_by_css(self, css_selector_field_div_login):
-        page = Page(testdata["address"])
-        height = page.get_element_properties("css", css_selector_field_div_login, 'height')
-        assert height == testdata["height"]
+    def test_get_property_height_by_css(self, browser):
+        page = OperationHelper(browser)
+        page.go_to_site()
+        height = page.get_login_div_height()
+        assert height == data["height"]
 
-    def test_get_property_color_by_xpath(self, xpath_selector_login_btn):
-        page = Page(testdata["address"])
-        color = page.get_element_properties("xpath", xpath_selector_login_btn, 'color')
-        assert color == testdata["color"]
+    def test_get_property_color_by_xpath(self, browser):
+        page = OperationHelper(browser)
+        page.go_to_site()
+        color = page.get_login_button_color()
+        assert color == data["color"]
 
-    def test_login_failed(self, username_fild_input_selector, password_fild_input_selector, button_selector,
-                          error_selector):
-        page = Page(testdata["address"])
-        login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'w')
-        err = page.find_element('xpath', error_selector).text
-        page.close()
-        assert err == str(testdata["text_err"])
+    def test_login_failed(self, browser):
+        page = OperationHelper(browser)
+        page.go_to_site()
+        page.login(data["w_username"], data["w_password"])
+        text_error = page.get_error_text()
+        assert text_error == str(data["text_err"])
 
-    def test_login_success(self, username_fild_input_selector, password_fild_input_selector, button_selector,
-                           xpath_selector_hello_user):
-        page = Page(testdata["address"])
-        login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'g')
-        hello = page.find_element('xpath', xpath_selector_hello_user).text
-        page.close()
-        assert hello == testdata["hello"]
+    def test_login_success(self, browser):
+        page = OperationHelper(browser)
+        page.go_to_site()
+        page.login(data["username"], data["password"])
+        hello_text = page.get_hello_text()
+        assert hello_text == data["hello"]
 
-    def test_create_post(self, username_fild_input_selector, password_fild_input_selector, button_selector,
-                         id_selector_plus, title_field_input_selector, description_field_input_selector,
-                         content_field_input_selector, xpath_selector_name_post, class_selector_save_btn):
-        page = Page(testdata["address"])
-        login(username_fild_input_selector, password_fild_input_selector, button_selector, page, 'g')
-        create_post(class_selector_save_btn, page,
-                    id_selector_plus, title_field_input_selector, description_field_input_selector,
-                    content_field_input_selector)
-        name_post = page.find_element("xpath", xpath_selector_name_post).text
-        page.close()
-        assert name_post == testdata['title']
+    def test_create_post(self, browser):
+        page = OperationHelper(browser)
+        page.go_to_site()
+        page.login(data["username"], data["password"])
+        page.click_create_post_button_plus()
+        page.create_new_post(data["title"], data["description"], data["content"])
+        time.sleep(2)
+        name_post = page.get_title_name_post_text()
+        assert name_post == data['title']
