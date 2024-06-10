@@ -15,8 +15,14 @@ class TestSearchLocators:
     LOCATOR_LOGIN_BTN_XPATH = (By.XPATH, '//*[@id="login"]/div[3]/button/div')
     LOCATOR_SAVE_POST_BTN = (By.CLASS_NAME, 'mdc-button__ripple')
     LOCATOR_HELLO_USER = (By.XPATH, '/html/body/div[1]/main/nav/ul/li[3]/a')
-    LOCATOR_TITLE_OF_POST = By.XPATH, '//*[@id="app"]/main/div/div[1]/h1'
-    LOCATOR_PLUS_BTN = By.ID, 'create-btn'
+    LOCATOR_TITLE_OF_POST = (By.XPATH, '//*[@id="app"]/main/div/div[1]/h1')
+    LOCATOR_PLUS_BTN = (By.ID, 'create-btn')
+    LOCATOR_CONTACT_US = (By.XPATH, '//*[@id="app"]/main/nav/ul/li[2]/a')
+    LOCATOR_CONTACT_US_HEADER = (By.XPATH, '//*[@id="app"]/main/div/div/h1')
+    LOCATOR_YOUR_NAME_FIELD = (By.XPATH, '//*[@id="contact"]/div[1]/label/input')
+    LOCATOR_YOUR_EMAIL_FIELD = (By.XPATH, '//*[@id="contact"]/div[2]/label/input')
+    LOCATOR_CONTACT_CONTENT_FIELD = (By.XPATH, '//*[@id="contact"]/div[3]/label/span/textarea')
+    LOCATOR_CONTACT_US_BTN = (By.XPATH, '//*[@id="contact"]/div[4]/button/div')
 
 
 class OperationHelper(BasePage):
@@ -31,6 +37,11 @@ class OperationHelper(BasePage):
         login_field = self.find_element(TestSearchLocators.LOCATOR_PASS_FIELD)
         login_field.clear()
         login_field.send_keys(word)
+
+    def go_to_site_and_login(self, username, password):
+        self.go_to_site()
+        self.login(username, password)
+
 
     def click_login_button(self):
         logging.info("Click login button")
@@ -86,3 +97,30 @@ class OperationHelper(BasePage):
 
     def get_title_name_post_text(self):
         return self.find_element(TestSearchLocators.LOCATOR_TITLE_OF_POST).text
+
+    def click_contact_us(self):
+        self.find_element(TestSearchLocators.LOCATOR_CONTACT_US).click()
+
+    def get_contact_us_header_text(self):
+        return self.find_element(TestSearchLocators.LOCATOR_CONTACT_US_HEADER).text
+
+    def enter_your_name(self, word):
+        logging.info(f'Send {word} to element {TestSearchLocators.LOCATOR_YOUR_NAME_FIELD[1]}')
+        login_field = self.find_element(TestSearchLocators.LOCATOR_YOUR_NAME_FIELD)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def enter_your_email(self, word):
+        logging.info(f'Send {word} to element {TestSearchLocators.LOCATOR_YOUR_EMAIL_FIELD[1]}')
+        login_field = self.find_element(TestSearchLocators.LOCATOR_YOUR_EMAIL_FIELD)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def enter_contact_content(self, word):
+        logging.info(f'Send {word} to element {TestSearchLocators.LOCATOR_CONTACT_CONTENT_FIELD[1]}')
+        login_field = self.find_element(TestSearchLocators.LOCATOR_CONTACT_CONTENT_FIELD)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def click_contact_us_button(self):
+        self.find_element(TestSearchLocators.LOCATOR_CONTACT_US_BTN).submit()

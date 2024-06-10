@@ -13,3 +13,8 @@ hello: Hello, BolvanOdin
 title: new test post 2
 description: creation new test post 2
 content: check title after creation new test post 2
+contact_us_header_text: Contact us!
+name: Andrey
+email: andrey@andrey.ru
+contact_content: some problem in site
+alert_text: Form successfully submitted
