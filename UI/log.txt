@@ -1,10 +1,58 @@
-2024-06-10 22:32:04 INFO ====== WebDriver manager ======
-2024-06-10 22:32:05 INFO Get LATEST chromedriver version for google-chrome
-2024-06-10 22:32:05 INFO Get LATEST chromedriver version for google-chrome
-2024-06-10 22:32:06 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
-2024-06-10 22:32:08 INFO Send BolvanOdin to element //*[@id="login"]/div[1]/label/input
-2024-06-10 22:32:08 INFO Send 32e8d56e17 to element //*[@id="login"]/div[2]/label/input
-2024-06-10 22:32:09 INFO Click login button
-2024-06-10 22:32:10 INFO Send Andrey to element //*[@id="contact"]/div[1]/label/input
-2024-06-10 22:32:10 INFO Send andrey@andrey.ru to element //*[@id="contact"]/div[2]/label/input
-2024-06-10 22:32:10 INFO Send some problem in site to element //*[@id="contact"]/div[3]/label/span/textarea
+2024-06-10 23:33:14 INFO ====== WebDriver manager ======
+2024-06-10 23:33:15 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:15 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:15 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:19 INFO ====== WebDriver manager ======
+2024-06-10 23:33:19 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:20 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:20 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:23 INFO ====== WebDriver manager ======
+2024-06-10 23:33:24 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:24 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:24 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:26 INFO Send test to element login field
+2024-06-10 23:33:26 INFO Send 1234 to element pass field
+2024-06-10 23:33:26 INFO Click button ('css selector', 'button')
+2024-06-10 23:33:27 INFO We find text 401 in field ('xpath', '//*[@id="app"]/main/div/div/div[2]/h2')
+2024-06-10 23:33:29 INFO ====== WebDriver manager ======
+2024-06-10 23:33:30 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:30 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:30 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:32 INFO Send BolvanOdin to element login field
+2024-06-10 23:33:32 INFO Send 32e8d56e17 to element pass field
+2024-06-10 23:33:32 INFO Click button ('css selector', 'button')
+2024-06-10 23:33:33 INFO We find text Hello, BolvanOdin in field ('xpath', '/html/body/div[1]/main/nav/ul/li[3]/a')
+2024-06-10 23:33:35 INFO ====== WebDriver manager ======
+2024-06-10 23:33:36 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:36 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:36 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:38 INFO Send BolvanOdin to element login field
+2024-06-10 23:33:38 INFO Send 32e8d56e17 to element pass field
+2024-06-10 23:33:38 INFO Click button ('css selector', 'button')
+2024-06-10 23:33:39 INFO Click button ('id', 'create-btn')
+2024-06-10 23:33:39 INFO Send new test post 2 to element ('xpath', '//*[@id="create-item"]/div/div/div[1]/div/label/input')
+2024-06-10 23:33:39 INFO Send creation new test post 2 to element ('xpath', '//*[@id="create-item"]/div/div/div[2]/div/label/span/textarea')
+2024-06-10 23:33:39 INFO Send check title after creation new test post 2 to element ('xpath', '//*[@id="create-item"]/div/div/div[3]/div/label/span/textarea')
+2024-06-10 23:33:39 INFO Submit button ('class name', 'mdc-button__ripple')
+2024-06-10 23:33:41 INFO We find text new test post 2 in field ('xpath', '//*[@id="app"]/main/div/div[1]/h1')
+2024-06-10 23:33:43 INFO ====== WebDriver manager ======
+2024-06-10 23:33:44 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:44 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:45 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:46 INFO Send BolvanOdin to element login field
+2024-06-10 23:33:46 INFO Send 32e8d56e17 to element pass field
+2024-06-10 23:33:46 INFO Click button ('css selector', 'button')
+2024-06-10 23:33:47 INFO Click button ('xpath', '//*[@id="app"]/main/nav/ul/li[2]/a')
+2024-06-10 23:33:49 INFO We find text Contact us! in field ('xpath', '//*[@id="app"]/main/div/div/h1')
+2024-06-10 23:33:51 INFO ====== WebDriver manager ======
+2024-06-10 23:33:52 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:52 INFO Get LATEST chromedriver version for google-chrome
+2024-06-10 23:33:53 INFO Driver [C:\Users\drozd\.wdm\drivers\chromedriver\win64\125.0.6422.141\chromedriver-win32/chromedriver.exe] found in cache
+2024-06-10 23:33:54 INFO Send BolvanOdin to element login field
+2024-06-10 23:33:54 INFO Send 32e8d56e17 to element pass field
+2024-06-10 23:33:54 INFO Click button ('css selector', 'button')
+2024-06-10 23:33:55 INFO Click button ('xpath', '//*[@id="app"]/main/nav/ul/li[2]/a')
+2024-06-10 23:33:55 INFO Send Andrey to element ('xpath', '//*[@id="contact"]/div[1]/label/input')
+2024-06-10 23:33:56 INFO Send andrey@andrey.ru to element ('xpath', '//*[@id="contact"]/div[2]/label/input')
+2024-06-10 23:33:56 INFO Send some problem in site to element ('xpath', '//*[@id="contact"]/div[3]/label/span/textarea')
+2024-06-10 23:33:56 INFO Submit button ('xpath', '//*[@id="contact"]/div[4]/button/div')

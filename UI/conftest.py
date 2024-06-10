@@ -21,6 +21,7 @@ def browser():
     else:
         service = Service(executable_path=ChromeDriverManager().install())
         options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
         driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.close()
